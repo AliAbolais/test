@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1f4">
+  <title>Welcome Back | The Love Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: 'Nunito', sans-serif;
+      color: #332b35;
+      background: #fff7fa;
+      font-synthesis: none;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 15% 15%, #ffe1ea 0, transparent 34%),
+        radial-gradient(circle at 90% 85%, #eee4ff 0, transparent 35%),
+        #fff8fb;
+    }
+
+    .login-card {
+      width: min(100%, 420px);
+      padding: 36px;
+      border: 1px solid #f5dce5;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 20px 60px rgba(153, 66, 104, 0.12);
+    }
+
+    .mascots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .mascots img {
+      width: 64px;
+      height: 64px;
+      border: 2px solid #f8d7a2;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .mascots img + img { border-color: #f3cadb; }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #e44f7b;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 6vw, 2rem);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .subtitle {
+      margin: 8px 0 28px;
+      color: #837783;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .field { margin-top: 18px; }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 14px;
+      border: 1px solid #eadfe6;
+      border-radius: 13px;
+      background: #fffdfd;
+      color: inherit;
+      font: inherit;
+    }
+
+    input:focus-visible {
+      border-color: #e56b91;
+      outline: 3px solid #fce0e9;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin: 16px 0 22px;
+      font-size: 0.82rem;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .remember input { accent-color: #e44f7b; }
+
+    a { color: #d94370; font-weight: 800; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .submit {
+      width: 100%;
+      min-height: 50px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(100deg, #ed5a83, #d94370);
+      box-shadow: 0 8px 18px rgba(217, 67, 112, 0.22);
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 900;
+    }
+
+    .submit:hover { filter: brightness(1.04); }
+
+    .notice {
+      min-height: 1.25rem;
+      margin: 14px 0 0;
+      color: #9b4966;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 22px;
+      color: #8a7d89;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 420px) {
+      .login-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="login-card">
+    <div class="mascots" aria-label="Qoobee and Pengu">
+      <img src="assets/qoobee.jpg" alt="Qoobee">
+      <img src="assets/pengu.png" alt="Pengu">
+    </div>
+    <p class="eyebrow">The Love Quest</p>
+    <h1>Welcome back 💖</h1>
+    <p class="subtitle">Sign in to continue your lovely adventure.</p>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
+      </div>
+      <div class="options">
+        <label class="remember"><input type="checkbox" name="remember"> Remember me</label>
+        <a href="#" id="forgot-link">Forgot password?</a>
+      </div>
+      <button class="submit" type="submit">Sign in 💌</button>
+      <p class="notice" id="notice" role="status" aria-live="polite"></p>
+    </form>
+
+    <a class="back-link" href="intro.html">← Back to the intro</a>
+  </main>
+  <script>
+    const notice = document.getElementById('notice');
+
+    document.getElementById('login-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      notice.textContent = 'This is a visual demo; sign-in is not connected.';
+    });
+
+    document.getElementById('forgot-link').addEventListener('click', (event) => {
+      event.preventDefault();
+      notice.textContent = 'Password recovery is not connected in this demo.';
+    });
+  </script>
+</body>
+</html>
